@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>helium-arduino: Class Index</title>
+<title>helium-arduino: Basic.ino</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -59,20 +59,11 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Class Index</div>  </div>
+<div class="title">Basic.ino</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="qindex"><a class="qindex" href="#letter_c">c</a>&#160;|&#160;<a class="qindex" href="#letter_h">h</a></div>
-<table class="classindex">
-<tr><td rowspan="2" valign="bottom"><a name="letter_c"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;c&#160;&#160;</div></td></tr></table>
-</td><td rowspan="2" valign="bottom"><a name="letter_h"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;h&#160;&#160;</div></td></tr></table>
-</td><td></td></tr>
-<tr><td></td></tr>
-<tr><td valign="top"><a class="el" href="class_channel.html">Channel</a>&#160;&#160;&#160;</td><td valign="top"><a class="el" href="class_helium.html">Helium</a>&#160;&#160;&#160;</td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-</table>
-<div class="qindex"><a class="qindex" href="#letter_c">c</a>&#160;|&#160;<a class="qindex" href="#letter_h">h</a></div>
-</div><!-- contents -->
+<p>shows a basic example of how to construct <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a>, an MQTT channel and transmitting data to that channel</p>
+<div class="fragment"><div class="line">/*</div><div class="line"> * Copyright 2017, Helium Systems, Inc.</div><div class="line"> * All Rights Reserved. See LICENCE.txt for license information</div><div class="line"> */</div><div class="line"></div><div class="line">#include &quot;Arduino.h&quot;</div><div class="line">#include &quot;Board.h&quot;</div><div class="line">#include &quot;Helium.h&quot;</div><div class="line"></div><div class="line">Helium helium(&amp;atom_serial);</div><div class="line">Channel azure(&amp;helium);</div><div class="line"></div><div class="line">void</div><div class="line">setup()</div><div class="line">{</div><div class="line">    Serial.begin(9600);</div><div class="line">    while (!Serial)</div><div class="line">        ;</div><div class="line">    Serial.println(&quot;Starting&quot;);</div><div class="line"></div><div class="line">    helium.begin(HELIUM_BAUD_RATE);</div><div class="line"></div><div class="line">    Serial.println(&quot;Connecting&quot;);</div><div class="line">    if (helium_status_OK != helium.connect())</div><div class="line">    {</div><div class="line">        Serial.println(&quot;ERROR: Failed to connect&quot;);</div><div class="line">    }</div><div class="line">    else</div><div class="line">    {</div><div class="line">        Serial.println(&quot;Connected&quot;);</div><div class="line">    }</div><div class="line">}</div><div class="line"></div><div class="line">void</div><div class="line">loop()</div><div class="line">{</div><div class="line">    Serial.println(&quot;HELLO!&quot;);</div><div class="line">    while (1)</div><div class="line">        ;</div><div class="line">}</div></div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Tue Jun 13 2017 13:16:15 for helium-arduino by &#160;<a href="http://www.doxygen.org/index.html">

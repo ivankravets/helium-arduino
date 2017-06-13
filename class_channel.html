@@ -9,19 +9,9 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -34,21 +24,6 @@
    <div id="projectname">helium-arduino
    </div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -58,21 +33,15 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('class_channel.html','');});
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
 </script>
-<div id="doc-content">
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -87,6 +56,7 @@ $(document).ready(function(){initNavTree('class_channel.html','');});
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -95,42 +65,279 @@ $(document).ready(function(){initNavTree('class_channel.html','');});
 <div class="title">Channel Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A <a class="el" href="class_channel.html" title="A Channel to an IoT platform. ">Channel</a> to an IoT platform.  
+ <a href="class_channel.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_helium_8h_source.html">Helium.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0215ac285d3b258da38d72ee69ff121d"><td class="memItemLeft" align="right" valign="top"><a id="a0215ac285d3b258da38d72ee69ff121d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Channel</b> (<a class="el" href="class_helium.html">Helium</a> *helium)</td></tr>
+<tr class="memitem:a0215ac285d3b258da38d72ee69ff121d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a0215ac285d3b258da38d72ee69ff121d">Channel</a> (<a class="el" href="class_helium.html">Helium</a> *helium)</td></tr>
 <tr class="separator:a0215ac285d3b258da38d72ee69ff121d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aa6675826f1dae9bdaff4d6f6a13e1d"><td class="memItemLeft" align="right" valign="top"><a id="a2aa6675826f1dae9bdaff4d6f6a13e1d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> (const char *name)</td></tr>
+<tr class="memitem:a2aa6675826f1dae9bdaff4d6f6a13e1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a2aa6675826f1dae9bdaff4d6f6a13e1d">begin</a> (const char *name)</td></tr>
 <tr class="separator:a2aa6675826f1dae9bdaff4d6f6a13e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25090d57bfcadc6fe0008df8113c8ca2"><td class="memItemLeft" align="right" valign="top"><a id="a25090d57bfcadc6fe0008df8113c8ca2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>send</b> (void const *data, size_t len, int8_t *result)</td></tr>
+<tr class="memitem:a25090d57bfcadc6fe0008df8113c8ca2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a25090d57bfcadc6fe0008df8113c8ca2">send</a> (void const *data, size_t len, int8_t *result)</td></tr>
 <tr class="separator:a25090d57bfcadc6fe0008df8113c8ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc737b8c37252dcb74b4a4e4e26f2551"><td class="memItemLeft" align="right" valign="top"><a id="afc737b8c37252dcb74b4a4e4e26f2551"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> (const char *name, uint16_t *token)</td></tr>
+<tr class="memitem:afc737b8c37252dcb74b4a4e4e26f2551"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#afc737b8c37252dcb74b4a4e4e26f2551">begin</a> (const char *name, uint16_t *token)</td></tr>
 <tr class="separator:afc737b8c37252dcb74b4a4e4e26f2551"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d31e2b1b8ac87ed5458a74478da0dcf"><td class="memItemLeft" align="right" valign="top"><a id="a8d31e2b1b8ac87ed5458a74478da0dcf"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>send</b> (void const *data, size_t len, uint16_t *token)</td></tr>
+<tr class="memitem:a8d31e2b1b8ac87ed5458a74478da0dcf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a8d31e2b1b8ac87ed5458a74478da0dcf">send</a> (void const *data, size_t len, uint16_t *token)</td></tr>
 <tr class="separator:a8d31e2b1b8ac87ed5458a74478da0dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b0eb83f8c24b3923568ccd43ed1340c"><td class="memItemLeft" align="right" valign="top"><a id="a2b0eb83f8c24b3923568ccd43ed1340c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>poll</b> (uint16_t token, int8_t *result, uint32_t retries)</td></tr>
+<tr class="memitem:a2b0eb83f8c24b3923568ccd43ed1340c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a2b0eb83f8c24b3923568ccd43ed1340c">poll</a> (uint16_t token, int8_t *result, uint32_t retries)</td></tr>
 <tr class="separator:a2b0eb83f8c24b3923568ccd43ed1340c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a class="el" href="class_channel.html" title="A Channel to an IoT platform. ">Channel</a> to an IoT platform. </p>
+<p>Channels represent a delivery mechanism from the device to a number of supported back-end IoT platforms.</p>
+<p>To use a channel, make sure you have it set up in your <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Dashboard and then call <a class="el" href="class_channel.html#a2aa6675826f1dae9bdaff4d6f6a13e1d">Channel::begin</a> with the channel name as you configured it on the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Dashboard. This will automatically ensure that the device is securely authenticated and registered with the channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="_helium_8h_source.html#l00153">153</a> of file <a class="el" href="_helium_8h_source.html">Helium.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0215ac285d3b258da38d72ee69ff121d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0215ac285d3b258da38d72ee69ff121d">&#9670;&nbsp;</a></span>Channel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Channel::Channel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_helium.html">Helium</a> *&#160;</td>
+          <td class="paramname"><em>helium</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construct a channel.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">helium</td><td>The <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Atom to communicate with </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00129">129</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2aa6675826f1dae9bdaff4d6f6a13e1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aa6675826f1dae9bdaff4d6f6a13e1d">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Channel::begin </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Begin communicating over a channel</p>
+<p>Always call this method before calling <a class="el" href="class_channel.html#a25090d57bfcadc6fe0008df8113c8ca2">Channel::send</a>. Beginning communication will ensure that the device is authenticated and registered with the channel with the given name as configured in the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Dashboard.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the channel to authenticate with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00141">141</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afc737b8c37252dcb74b4a4e4e26f2551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc737b8c37252dcb74b4a4e4e26f2551">&#9670;&nbsp;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Channel::begin </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>token</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Asynchronous begin method.</p>
+<p>The <a class="el" href="class_channel.html#a2aa6675826f1dae9bdaff4d6f6a13e1d">Channel::begin(const char *)</a> method is a synchronous version of this method. Sending a request to a channel returns a <code>token</code> which can be used in a subsequent call to <a class="el" href="class_channel.html#a2b0eb83f8c24b3923568ccd43ed1340c">poll()</a> to check for results from the remote channel.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the channel to authenticate with. </td></tr>
+    <tr><td class="paramname">token</td><td>The output parameter for the pending result token. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00135">135</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2b0eb83f8c24b3923568ccd43ed1340c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0eb83f8c24b3923568ccd43ed1340c">&#9670;&nbsp;</a></span>poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Channel::poll </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t *&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>retries</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Poll for a result token.</p>
+<p>This polls the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Atom for the given number of retries for the result of a given <code>token</code>. Use HELIUM_POLL_RETRIES_5S for the recommended number of retries.</p>
+<p>If succcessful the result will be helium_status_OK and the result value will be set to the result of the original request that the token represents.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>The token to check for </td></tr>
+    <tr><td class="paramname">result</td><td>The out parameter for the result of the given request token </td></tr>
+    <tr><td class="paramname">retries</td><td>The number of times to retry </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00171">171</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a25090d57bfcadc6fe0008df8113c8ca2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25090d57bfcadc6fe0008df8113c8ca2">&#9670;&nbsp;</a></span>send() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Channel::send </td>
+          <td>(</td>
+          <td class="paramtype">void const *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Send data to this channel.</p>
+<p>Send data to a given channel. The given data is sent to the configured channel and the result as returned by the channel is put in the <code>result</code> output variable. The result value is <code>0</code> for success and non-<code>0</code> if an error occurred.</p>
+<dl class="section note"><dt>Note</dt><dd>The maximum number of bytes that can be transmitted is limited to HELIUM_MAX_DATA_SIZE (about 100 bytes).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data bytes to send </td></tr>
+    <tr><td class="paramname">len</td><td>The number of bytes in data to send </td></tr>
+    <tr><td class="paramname">result</td><td>An out parameter for the result returned by the channel </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00160">160</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8d31e2b1b8ac87ed5458a74478da0dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d31e2b1b8ac87ed5458a74478da0dcf">&#9670;&nbsp;</a></span>send() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Channel::send </td>
+          <td>(</td>
+          <td class="paramtype">void const *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>token</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Asynchornous send method.</p>
+<p>This is the asynchronous version of the <a class="el" href="class_channel.html#a25090d57bfcadc6fe0008df8113c8ca2">send</a>(void const *data, size_t int8_t *) method.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data bytes to send </td></tr>
+    <tr><td class="paramname">len</td><td>The number of bytes in data to send </td></tr>
+    <tr><td class="paramname">token</td><td>The output parameter for the pending result token </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00153">153</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="_helium_8h_source.html">Helium.h</a></li>
-<li>src/Helium.cpp</li>
+<li>src/<a class="el" href="_helium_8cpp_source.html">Helium.cpp</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_channel.html">Channel</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Tue Jun 13 2017 13:16:15 for helium-arduino by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
 </body>
 </html>
