@@ -75,8 +75,8 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0215ac285d3b258da38d72ee69ff121d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a0215ac285d3b258da38d72ee69ff121d">Channel</a> (<a class="el" href="class_helium.html">Helium</a> *helium)</td></tr>
 <tr class="separator:a0215ac285d3b258da38d72ee69ff121d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aa6675826f1dae9bdaff4d6f6a13e1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a2aa6675826f1dae9bdaff4d6f6a13e1d">begin</a> (const char *name)</td></tr>
-<tr class="separator:a2aa6675826f1dae9bdaff4d6f6a13e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f7188f7f2dbe0cb3068ab5a539138c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a88f7188f7f2dbe0cb3068ab5a539138c">begin</a> (const char *name, int8_t *result)</td></tr>
+<tr class="separator:a88f7188f7f2dbe0cb3068ab5a539138c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25090d57bfcadc6fe0008df8113c8ca2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#a25090d57bfcadc6fe0008df8113c8ca2">send</a> (void const *data, size_t len, int8_t *result)</td></tr>
 <tr class="separator:a25090d57bfcadc6fe0008df8113c8ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc737b8c37252dcb74b4a4e4e26f2551"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel.html#afc737b8c37252dcb74b4a4e4e26f2551">begin</a> (const char *name, uint16_t *token)</td></tr>
@@ -89,7 +89,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A <a class="el" href="class_channel.html" title="A Channel to an IoT platform. ">Channel</a> to an IoT platform. </p>
 <p>Channels represent a delivery mechanism from the device to a number of supported back-end IoT platforms.</p>
-<p>To use a channel, make sure you have it set up in your <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Dashboard and then call <a class="el" href="class_channel.html#a2aa6675826f1dae9bdaff4d6f6a13e1d">Channel::begin</a> with the channel name as you configured it on the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Dashboard. This will automatically ensure that the device is securely authenticated and registered with the channel. </p>
+<p>To use a channel, make sure you have it set up in your <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Dashboard and then call <a class="el" href="class_channel.html#a88f7188f7f2dbe0cb3068ab5a539138c">Channel::begin</a> with the channel name as you configured it on the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Dashboard. This will automatically ensure that the device is securely authenticated and registered with the channel. </p>
 
 <p class="definition">Definition at line <a class="el" href="_helium_8h_source.html#l00153">153</a> of file <a class="el" href="_helium_8h_source.html">Helium.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -121,8 +121,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2aa6675826f1dae9bdaff4d6f6a13e1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2aa6675826f1dae9bdaff4d6f6a13e1d">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
+<a id="a88f7188f7f2dbe0cb3068ab5a539138c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f7188f7f2dbe0cb3068ab5a539138c">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,16 +131,28 @@ Public Member Functions</h2></td></tr>
           <td class="memname">int Channel::begin </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int8_t *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Begin communicating over a channel</p>
 <p>Always call this method before calling <a class="el" href="class_channel.html#a25090d57bfcadc6fe0008df8113c8ca2">Channel::send</a>. Beginning communication will ensure that the device is authenticated and registered with the channel with the given name as configured in the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Dashboard.</p>
+<p>The <code>result</code> value will be 0 if the channel was created successfully and non-<code>0</code> otherwise.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the channel to authenticate with. </td></tr>
+    <tr><td class="paramname">result</td><td>An out parameter for the result of the request. </td></tr>
   </table>
   </dd>
 </dl>
@@ -175,7 +187,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Asynchronous begin method.</p>
-<p>The <a class="el" href="class_channel.html#a2aa6675826f1dae9bdaff4d6f6a13e1d">Channel::begin(const char *)</a> method is a synchronous version of this method. Sending a request to a channel returns a <code>token</code> which can be used in a subsequent call to <a class="el" href="class_channel.html#a2b0eb83f8c24b3923568ccd43ed1340c">poll()</a> to check for results from the remote channel.</p>
+<p>The Channel::begin(const char *) method is a synchronous version of this method. Sending a request to a channel returns a <code>token</code> which can be used in a subsequent call to <a class="el" href="class_channel.html#a2b0eb83f8c24b3923568ccd43ed1340c">poll()</a> to check for results from the remote channel.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the channel to authenticate with. </td></tr>
@@ -231,7 +243,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00171">171</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00180">180</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
 
 </div>
 </div>
@@ -278,7 +290,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00160">160</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00168">168</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +336,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00153">153</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_helium_8cpp_source.html#l00161">161</a> of file <a class="el" href="_helium_8cpp_source.html">Helium.cpp</a>.</p>
 
 </div>
 </div>
@@ -335,7 +347,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 13 2017 13:29:20 for helium-arduino by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 23 2017 10:15:35 for helium-arduino by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

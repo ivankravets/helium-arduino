@@ -59,16 +59,16 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Helium for Arduino </div>  </div>
+<div class="title"><a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> for Arduino </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="https://travis-ci.com/helium/helium-arduino"></a></p>
-<p>This code repository exposes an <a href="https://www.arduino.cc/">Arduino</a> library for the <a href="https://www.helium.com/products/atom-xbee-module">Helium Atom</a> module. The Helium Atom makes it easy to securely connect IoT devices and applications to back-end IoT services.</p>
+<div class="textblock"><p><a href="https://travis-ci.org/helium/helium-arduino"></a></p>
+<p>This code repository exposes an <a href="https://www.arduino.cc/">Arduino</a> library for the <a href="https://www.helium.com/products/atom-xbee-module">Helium Atom</a> module. The <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Atom makes it easy to securely connect IoT devices and applications to back-end IoT services.</p>
 <h1>Getting Started</h1>
 <h2>Hardware</h2>
-<p>To get started with Helium for Arduino you will need the following hardware:</p>
+<p>To get started with <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> for Arduino you will need the following hardware:</p>
 <ul>
-<li>A Helium Atom. The easiest way to get started is to get the <a href="https://www.helium.com/products/helium-starter-kit">Helium Starter Kit</a> which includes a gateway (Element), and an XBee version of the Helium Atom.</li>
+<li>A <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Atom. The easiest way to get started is to get the <a href="https://www.helium.com/products/helium-starter-kit">Helium Starter Kit</a> which includes a gateway (Element), and an XBee version of the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Atom.</li>
 <li>An Arduino board of any supported type, such as the <a href="https://www.arduino.cc/en/main/arduinoBoardUno">Arduino Uno</a>. The supported boards are listed below.</li>
 <li>An <a href="https://www.helium.com/products/atom-arduino-adapters">Arduino XBee Shield</a> to adapt the XBee to the Arduino shield pinout.</li>
 </ul>
@@ -77,42 +77,33 @@ $(function() {
 <ul>
 <li>The <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a>.</li>
 <li>The <a href="https://github.com/helium/helium-arduino">Helium Arduino Library</a>. You can install this library through either of the following steps:<ul>
-<li>The Library Manager by clicking on <em>Sketch &gt; Include Library</em>, searching for Helium and clicking the <em>Install</em> button.</li>
+<li>The Library Manager by clicking on <em>Sketch &gt; Include Library</em>, searching for <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> and clicking the <em>Install</em> button.</li>
 <li>By downloading a release <em>Helium.zip</em> file from the <a href="https://github.com/helium/helium-arduino/releases">helium-arduino releases</a> page. Once downloaded launch the Arduino IDE, click <em>Sketch &gt; Include Library, Add .Zip Library</em>, and selecting the <em>Helium.zip</em> file. Note that you will need to re-start the Arduino IDE after installing the zip library.</li>
 </ul>
 </li>
 </ul>
 <h2>Board Setup</h2>
-<p>Ensure that the Helium Element is powered on and connected. The main LED on the Element should be green or blue to indicate it is powered on and connected to the network.</p>
-<p>Plug the Adapter into the Arduino board and the Helium XBee Atom into the Adapter.</p>
-<p>Depending on the Arduino board you will have to configure the D<sub>in</sub> and D<sub>out</sub> jumpers on the Adapter to get the Arduino to talk to the Helium Atom using the right pins.</p>
+<p>Ensure that the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Element is powered on and connected. The main LED on the Element should be green or blue to indicate it is powered on and connected to the network.</p>
+<p>Plug the Adapter into the Arduino board and the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> XBee Atom into the Adapter.</p>
+<p>Depending on the Arduino board you will have to configure the D<sub>in</sub> and D<sub>out</sub> jumpers on the Adapter to get the Arduino to talk to the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Atom using the right pins.</p>
 <p>The following boards D<sub>in</sub> and D<sub>out</sub> pins are known. Other setups will also work but we've confirmed the following work.</p>
-<table class="doxtable">
-<tr>
-<th>Board </th><th align="right">D<sub>in</sub> </th><th align="right">D<sub>out</sub>  </th></tr>
-<tr>
-<td>Arduino Uno </td><td align="right">8 </td><td align="right">9 </td></tr>
-<tr>
-<td>Arduino M0 Pro </td><td align="right">0 </td><td align="right">1 </td></tr>
-<tr>
-<td>Arduino Zero </td><td align="right">0 </td><td align="right">1 </td></tr>
-</table>
+<p>Board | D<sub>in</sub> | D<sub>out</sub> | Notes ---------------&mdash;| ----------&mdash;: | -----------&mdash;: | --&mdash; Arduino Uno | 9 | 8 | Arduino M0 Pro | 0 | 1 | Arduino Zero | 0 | 1 | Arduino Due | 9 | 8 | Wire up RX3 (15) to pin 8 on board, TX3 to pin9</p>
 <h2>Example Setup</h2>
 <p>The example sketches can be found in the Arduino IDE under <em>File &gt; Examples &gt; <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a></em>.</p>
 <p>With one of the examples opened, the Element powered on, and the configured board connected to a USB port click the <em>Run</em> button.</p>
 <p>The IDE should upload the example sketch to the board and you should see the Atom power on, connect and perform the task coded into the loaded example sketch.</p>
-<p>Note that some of the demo sketches will require you to have a configured Channel in the Helium Dashboard in order to channel data from the device all the way to the end IoT service.</p>
-<p>Please read the comments in the example sketch and in the Channel configuration sections in the dashboard for more information on how to set up and configure channels.</p>
+<p>Note that some of the demo sketches will require you to have a configured <a class="el" href="class_channel.html" title="A Channel to an IoT platform. ">Channel</a> in the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> Dashboard in order to channel data from the device all the way to the end IoT service.</p>
+<p>Please read the comments in the example sketch and in the <a class="el" href="class_channel.html" title="A Channel to an IoT platform. ">Channel</a> configuration sections in the dashboard for more information on how to set up and configure channels.</p>
 <h2>Getting Help</h2>
-<p>That should be all you need to get going with Helium and Arduino. The Arduino community has a vast library of supported hardware extensions, all with libraries and example sketches to show their use. Tying these together with the Helium wireless network will make it a breeze to build a connected IoT device.</p>
-<p>If you have any questions or ideas about how to use this code - or any part of Helium - head over to the <a href="http://chat.helium.com/">Helium Community Slack</a>. We're standing by to help.</p>
+<p>That should be all you need to get going with <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> and Arduino. The Arduino community has a vast library of supported hardware extensions, all with libraries and example sketches to show their use. Tying these together with the <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> wireless network will make it a breeze to build a connected IoT device.</p>
+<p>If you have any questions or ideas about how to use this code - or any part of <a class="el" href="class_helium.html" title="Enables communication with the Helium Atom. ">Helium</a> - head over to the <a href="http://chat.helium.com/">Helium Community Slack</a>. We're standing by to help.</p>
 <h1>Contributing</h1>
 <p>Want to contribute to helium-arduino? That's awesome!</p>
 <p>Please see https://github.com/helium/helium-arduino/CONTRIBUTING.md "CONTRIBUTING.md" in this repository for details. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 13 2017 13:29:20 for helium-arduino by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 23 2017 10:15:35 for helium-arduino by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
